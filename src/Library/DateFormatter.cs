@@ -13,8 +13,19 @@ public class DateFormatter
     /// </summary>
     /// <param name="date">Una fecha en formato "dd/mm/yyyy".</param>
     /// <returns>La fecha convertida al formato "yyyy-mm-dd".</returns>
+    
     public static string ChangeFormat(string date)
     {
-        return date.Substring(6) + "-" + date.Substring(3, 2) + "-" + date.Substring(0, 2);
+        string salida = "";
+        if (date.Length == 10){
+            salida = date.Substring(6) + "-" + date.Substring(3, 2) + "-" + date.Substring(0, 2);
+        }
+        else if (date == " "){
+          salida = "ERROR, se ingreso una fecha en blanco.";
+        }
+        else{
+            salida = "ERROR, formato incorrecto.";
+        }
+        return salida; 
     }
 }
